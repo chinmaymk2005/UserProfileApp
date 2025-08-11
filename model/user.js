@@ -1,7 +1,7 @@
 const mongoose = require('mongoose'); 
+const DB = require('./db'); // Import the connection string from db.js
 
-
-const DB = 'mongodb+srv://chinmaymk13:jaisadguru@cluster0.5m9apsg.mongodb.net/UserProfileApp_EJS?retryWrites=true&w=majority&appName=Cluster0';  
+;  
 
 mongoose.connect(DB).then(()=>{
     console.log("Database connected"); 
