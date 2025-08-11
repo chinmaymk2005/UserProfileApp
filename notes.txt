@@ -1,0 +1,55 @@
+A company has diffrent datas like  emp , user , product , account , admin 
+  --->  each section(user , account ,admin, etc)codes called model 
+
+and that section in db called collection of that model 
+
+model(in code) ---->  collections( in db) 
+schema( in code) --->  documents(in db)   
+
+
+READ & UPDATE opern are comes under POST route 
+
+
+
+
+***************Basic CRUD opern in Mongodb *******************   
+
+
+// create User  
+app.get('/create', async (req,res)=>{
+    let createdUser =  await userModel.create({
+        name : 'Anupama', 
+        username:'anu', 
+        email:'anu29@gmail.com' 
+    })
+    res.send(createdUser); 
+})
+
+// read user 
+app.get('/read', async (req,res) => {
+    let users = await userModel.find();  
+
+    res.send(users) ;
+})
+
+// update user 
+app.get('/update', async (req,res)=>{ 
+        let updatedUser = await userModel.findOneAndUpdate({username:"cmk2005"}, {name : "Chinmay Khairnar"},{new:true}) ; 
+        res.send(updatedUser) ;
+})    
+ 
+// delete user
+app.get('/delete', async (req,res) => {
+    let deleteUser = await userModel.findOneAndDelete({email:'anu29@gmail.com'});   
+
+    res.json({
+        message : 'user deleted', 
+        Deleted_User : deleteUser 
+    }) ;
+}) 
+
+ 
+
+<% alluser.forEach(function(user){ %>  
+                
+            <% }) %> 
